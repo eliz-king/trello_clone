@@ -1,21 +1,22 @@
 class BoardsController < ApplicationController
 
-  before_action :find_board, only: [:show, :edit, :update, :destroy]
+  before_action :set_board, only: [:show, :edit, :update, :destroy]
 
 
   def index
-    @boards = Board.all
+    @boards = current_user.boards
   end
 
   def show
   end
 
   def new
-    @board = Board.new(board_params)
+    @board = current_user.boards.new
+    render partial: 'boards/form'
   end
 
   def create
-    @board = Board.new(board_params)
+    @board = current_user.boards.new(board_params)
 
     if @board.save
       redirect_to boards_path
@@ -25,6 +26,7 @@ class BoardsController < ApplicationController
   end
 
   def edit
+    render partial: 'boards/form'
   end
 
   def update
@@ -43,10 +45,10 @@ class BoardsController < ApplicationController
   private
 
   def board_params
-    params.require(:board).perit(:title, :user_id)
+    params.require(:board).permit(:title)
   end
   
-  def find_board
-    @board = Board.find(params[:id])
+  def set_board
+    @board = current_user.boards.find(params[:id])
   end
 end

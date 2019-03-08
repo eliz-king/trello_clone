@@ -1,4 +1,4 @@
-<h1><%= @artist.id ? 'Edit Board' : 'Add new Board' %></h1>
+<h1><%= @board.id ? 'Edit Board' : 'Add new Board' %></h1>
 
 <%= form_with(model: @board, local: true) do |f| %>
   <%= f.label :title %>
