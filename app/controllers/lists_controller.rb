@@ -3,14 +3,14 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy]
 
   def index
-    @lists = List.all
+    @lists = @board.lists
   end
 
   def show
   end
 
   def new
-    @list = List.new
+    @list = @board.lists.new
   end
 
   def create
