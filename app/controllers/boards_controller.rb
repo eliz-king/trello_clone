@@ -14,6 +14,16 @@ class BoardsController < ApplicationController
     @board = Board.new(board_params)
   end
 
+  def create
+    @board = Board.new(board_params)
+
+    if @board.save
+      redirect_to boards_path
+    else
+      render :new
+    end
+  end
+
   def edit
   end
 
@@ -34,7 +44,8 @@ class BoardsController < ApplicationController
 
   def board_params
     params.require(:board).perit(:title, :user_id)
-
+  end
+  
   def find_board
     @board = Board.find(params[:id])
   end
