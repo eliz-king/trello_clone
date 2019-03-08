@@ -29,15 +29,15 @@ class BoardsController < ApplicationController
 
   def update
     if @board.update(board_params)
-      redirect_to boards_index_path
+      redirect_to boards_path
     else 
       render :edit
     end
   end
 
   def destroy
-    @person.destroy
-    redirect_to boards_index_path
+    @board.destroy
+    redirect_to boards_path
   end
 
   private
