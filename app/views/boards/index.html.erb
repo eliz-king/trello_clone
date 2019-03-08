@@ -1,15 +1,10 @@
+<h1> Boards</h1>
 
-<div class="ui grid">
   <% @boards.each do |board| %>
-  <div class="four wide column">
-    <div class="ui horizontal segments" style="padding: 10px;">
-        <i class="list ul icon"></i>
-        <div class="ui segment" style="padding: 27px;">
-        <h2 ><%= link_to "#{board.name}", board %></h2>
-        </div>
-    </div>
-  </div>
+      <%= link_to board.title, board %>
   <% end %>
 </div>
 
 <%= link_to 'Add a new Board', new_board_path %>
+
+<%= button_to 'logout', destroy_user_session_path, method: :delete %>
