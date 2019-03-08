@@ -1,20 +1,6 @@
-<br><br><br><br><br><br><br><br><br>
-<div class="ui centered raised card" style="width: 500px;">
-<br><br>
- <h2 class="ui center aligned icon header">
-  <i class="circular list icon"> </i>
- </h2>
- <br><br>
-  <div class="content">
-    <div class="header"><%= link_to "#{@board.name}", board_lists_path(@board) %></div>
-        <div class="description">
-        <p></p>
-        </div>
-    </div>
-    <div class="extra content">
-        <%= link_to 'Edit',  edit_board_path(@board), class: "ui inverted button blue"%>
-        <%= link_to 'Back',  boards_path, class: "ui inverted secondary button"%>
-        <%= link_to 'View Lists', board_lists_path(@board), class: "ui inverted button orange" %>
-    </div>
-  </div>
-</div>
+<h1><%= @board.title %></h1>
+
+<%= link_to 'Add List to Board', new_board_list_path(@board) %>
+<%= link_to 'Edit Board', edit_board_path(@board) %>
+<%= link_to 'Delete Board', @board, method: :delete %>
+<%= link_to 'Back Boards Home', boards_path %>
