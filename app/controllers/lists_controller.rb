@@ -11,6 +11,7 @@ class ListsController < ApplicationController
 
   def new
     @list = @board.lists.new
+    render parital: 'lists/form'
   end
 
   def create
@@ -24,6 +25,7 @@ class ListsController < ApplicationController
   end
 
   def edit
+    render partial: 'lists/form'
   end
 
   def update
@@ -49,6 +51,6 @@ class ListsController < ApplicationController
     end
 
     def list_params
-      params.require(:list).permit(:name, :priority)
+      params.require(:list).permit(:list_name, :priority)
     end
 end
