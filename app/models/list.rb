@@ -3,6 +3,5 @@ class List < ApplicationRecord
   has_many :tasks
 
   validates :list_name, allow_blank: false, length: {maximum: 500}
-  validates :task_name, presence: true, on: :save
 
 end
