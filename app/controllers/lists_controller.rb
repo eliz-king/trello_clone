@@ -11,7 +11,7 @@ class ListsController < ApplicationController
 
   def new
     @list = @board.lists.new
-    render parital: 'lists/form'
+    render partial: 'lists/form'
   end
 
   def create
