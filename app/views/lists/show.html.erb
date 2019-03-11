@@ -1,5 +1,12 @@
 <h1><%= @list.list_name %></h1>
 
+<h2> Tasks:</h2>
+
+<% @list.tasks.each do |task| %>
+  <%= render 'tasks/task', { task: task } %>
+<% end %>
+
+<hr>
 
 <%= link_to 'Add a New Task', new_list_task_path(@list) %>
 

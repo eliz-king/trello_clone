@@ -3,3 +3,5 @@
 <% @list.tasks.each do |task| %>
   <%= task.task_name %>
 <% end %>
+
+<%= link_to 'Back To List', list_path(@list) %>
