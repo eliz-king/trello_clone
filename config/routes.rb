@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :lists do
-    resouces :tasks
+    resources :tasks
   end
 
   
