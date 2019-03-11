@@ -1,7 +1,7 @@
 <h1> Lists </h1>
 
 <% @board.lists.each do |list| %>
-  <%= list.list_name %>
+  <%= link_to list.list_name, list %>
 <% end %>
 
 

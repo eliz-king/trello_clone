@@ -1,5 +1,5 @@
-<h1>Tasks for List: <%='#{@list.list_name}'%></h1>
+<h1>Tasks for List: <%= @list.list_name %></h1>
 
-<% @lists.task.each do |task| %>
+<% @list.tasks.each do |task| %>
   <%= task.task_name %>
 <% end %>
