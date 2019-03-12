@@ -1,14 +1,9 @@
-<h1><%= @list.list_name %></h1>
-
-<h2> Tasks:</h2>
-
-<% @list.tasks.each do |task| %>
-  <%= render 'tasks/task', { task: task } %>
-<% end %>
+<h1>List:<%= @list.list_name %></h1>
 
 <hr>
 
-
+<%= link_to 'Show Tasks', list_tasks_path(@list) %>
+<hr>
 <%= link_to 'Add a New Task', new_list_task_path(@list) %>
-<br>
-<%= link_to 'Edit or Delete Tasks', list_tasks_path(@list) %>
+
+

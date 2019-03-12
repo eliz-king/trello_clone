@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_list, only: [:index, :new, :create, :destroy]
+  before_action :set_list
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -30,7 +30,7 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      redirect_to list_tasks_path(@list)
+      redirect_to [@list, @task]
     else
       render :edit
     end

@@ -1,7 +1,12 @@
 <h1> Boards</h1>
 
+<div class='ui cards'>
   <% @boards.each do |board| %>
-      <%= link_to board.title, board %>
+    <div class='card'>
+      <div class='header'>
+        <%= link_to board.title, board %>
+      </div>
+    </div>
   <% end %>
 </div>
 
