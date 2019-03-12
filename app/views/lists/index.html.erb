@@ -3,6 +3,6 @@
 <% @board.lists.each do |list| %>
   <%= link_to list.list_name, list %>
 <% end %>
-
+<hr>
 
 <%= link_to 'Add a New List', new_board_list_path(@board) %>

@@ -1,7 +1,7 @@
 <h1>Tasks for List: <%= @list.list_name %></h1>
 
 <% @list.tasks.each do |task| %>
-  <%= task.task_name %>
+  <%= link_to task.task_name, list_task_path(@list, @task) %>
 <% end %>
-
+<hr>
 <%= link_to 'Back To List', list_path(@list) %>
