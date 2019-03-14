@@ -1,3 +1,13 @@
-
-<%= link_to 'View Boards', root_path %>
-<%= link_to 'New Board', new_board_path %>
+<nav>
+  <ul>
+  <div class="Boards">
+    <%= link_to 'View Boards', boards_path %>
+  </div>
+  <div class="new">
+    <%= link_to 'New Board', new_board_path %>
+  </div>
+  <div class="logout">
+    <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+    </div>
+  </ul>
+</nav>
