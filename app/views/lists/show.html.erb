@@ -3,7 +3,13 @@
 <hr>
 
 <%= link_to 'Show Tasks', list_tasks_path(@list) %>
+
+<hr>
+<%= link_to 'Edit List', edit_list_path(@list)%>
+<%= link_to 'Delete List', [@board, @list], method: :delete %>
 <hr>
 <%= link_to 'Add a New Task', new_list_task_path(@list) %>
+
+
 
 
